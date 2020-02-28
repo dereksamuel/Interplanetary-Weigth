@@ -14,18 +14,34 @@
 
         .container {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            max-width: 40vw;
+            max-width: 60vw;
             max-height: 45vh;
             text-align: left;
             margin-left: 12vw;
             font-size: 21px;
             padding: 18px;
+            float: right;
             background-color: rgb(255, 255, 255);
+            width: 40vw;
+            height: 30vh;
+            position: absolute;
+        }
+        .c2 {
+            max-width: 19vw; 
+            max-height: 35vh;
+            text-align: left;
+            margin-left: 38vh;
+            margin-top: -8vh;
+            position: absolute;
         }
 
         .weight {
-            margin-top: -9vh;
+            margin-top: 3vh;
             margin-left: 5vh;
+            max-height: 35vh;
+            max-width: 20vw; 
+            text-align: center;
+            position: absolute;
         }
         </style>
     </head>
@@ -34,24 +50,27 @@
             <label style="color: black; padding: 8px; margin-left: 12vw; font-size: 25px; background-color: rgb(177, 177, 177); box-shadow: 1px 2px 2px;">Interplanetary Weight</label>
             <br>
             <br>
-            <label type='text' id="planet" style="color: black; padding: 8px;">Planet Weight</label>
-            <input id="resul" type="text" readonly='readonly' style=" width: 19vw;">
             <div class="weight">
-                <label type='text' id="planet" style="color: black; margin-left: -2vw;">Your Weight :</label>
-                <input id="weight" type="number" placeholder="Escribe tu peso en kg" style="width: 19vw; margin-left: 1vw; margin-top: 12vh;">
-                <button onclick="reseat()" style=" background-color: rgb(177, 177, 177); color: rgb(0, 0, 0); font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">RESEAT</button>
+                <label type='text' id="planet" style="color: black; margin-left: 0vh;">Planet Weight</label>
+                <br>
+                <label type='text' id="planet" style="color: black; margin-left: -0.5vw;">Your Weight :</label>
+
+            <div class="c2">
+                <input id="resul" type="text" readonly='readonly' style=" width: 19vw;">
+                <input id="weight" type="number" placeholder="Escribe tu peso en kg" style="width: 19vw;">
+                <button onclick="reseat()" style=" background-color: rgb(177, 177, 177); color: rgb(0, 0, 0); font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 40vh;">RESEAT</button>
             </div>
         </div>
 
         <div>
-            <img src="/images-planets/earth.jpg" onclick="earthweight()" style="border-radius:50%; border: rgb(188, 233, 231) 2px solid; width: 37vh; height: 37vh; margin-left: 30vh;">
-            <img src="/images-planets/marte.jpg" onclick="marsweight()" style=" border-radius:50%; border: rgb(250, 161, 129) 2px solid; width: 27vh; height: 27vh; margin-left: 14vh;">
-            <img src="/images-planets/jupiter.jpg" onclick="jupiterweight()" style=" border-radius:50%; border: rgb(233, 215, 188) 2px solid; width: 65vh; height: 65vh; margin-left: 15vh;">            
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/13/55/earth-147591_960_720.png" onclick="earthweight()" style="border-radius:50%; border: rgb(188, 233, 231) 2px solid; width: 22vh; height: 22vh; margin-top: 45vh; position: absolute;">
+            <img src="https://cdn.pixabay.com/photo/2012/04/05/00/54/mars-25461_960_720.png" onclick="marsweight()" style=" border-radius:50%; border: rgb(250, 161, 129) 2px solid; width: 18vh; height: 18vh; margin-left: 50vh; margin-top: 48vh; position: absolute;">
+            <img src="https://cdn.pixabay.com/photo/2012/04/10/17/37/planet-26617_960_720.png" onclick="jupiterweight()" style=" border-radius:50%; border:rgb(229, 236, 195) 2px solid; width: 67vh; height: 67vh; position: absolute; margin-left: 95vh; margin-top: 9vh; position: absolute;">            
         </div>
 
-        <label style="color: aliceblue; margin-left: 19.5vw; font-size: 40px;">EARTH</label>
-        <label style="color: aliceblue; margin-left: 14.5vw; font-size: 40px;">MARS</label>
-        <label style="color: aliceblue; margin-left: 20vw; font-size: 40px;">JUPITER</label>
+        <label style="color: aliceblue; margin-left: 3vh; font-size: 40px; margin-top: 70vh; position: absolute;">EARTH</label>
+        <label style="color: aliceblue; margin-left: 14.5vw; font-size: 40px; margin-left: 52vh; margin-top: 70vh; position: absolute;">MARS</label>
+        <label style="color: aliceblue; margin-left: 20vw; font-size: 40px; margin-left: 118vh; margin-top: 79vh;  position: absolute;">JUPITER</label>
 
         <script>
             let g_earth = 9.8;
