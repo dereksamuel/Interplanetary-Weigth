@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interplanetary Weight</title>
+        <link rel="shortcut icon" href="/images-planets/icons8-insignia-de-próxima-generación-100.png">
+        <style>
+        body {
+            background-color: black;
+            font-weight: bold;
+            font-family: Helvetica;
+        }
+
+        .container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 40vw;
+            max-height: 45vh;
+            text-align: left;
+            margin-left: 12vw;
+            font-size: 21px;
+            padding: 18px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .weight {
+            margin-top: -9vh;
+            margin-left: 5vh;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <label style="color: black; padding: 8px; margin-left: 12vw; font-size: 25px; background-color: rgb(177, 177, 177); box-shadow: 1px 2px 2px;">Interplanetary Weight</label>
+            <br>
+            <br>
+            <label type='text' id="planet" style="color: black; padding: 8px;">Planet Weight</label>
+            <input id="resul" type="text" readonly='readonly' style=" width: 19vw;">
+            <div class="weight">
+                <label type='text' id="planet" style="color: black; margin-left: -2vw;">Your Weight :</label>
+                <input id="weight" type="number" placeholder="Escribe tu peso en kg" style="width: 19vw; margin-left: 1vw; margin-top: 12vh;">
+                <button onclick="reseat()" style=" background-color: rgb(177, 177, 177); color: rgb(0, 0, 0); font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">RESEAT</button>
+            </div>
+        </div>
+
+        <div>
+            <img src="/images-planets/earth.jpg" onclick="earthweight()" style="border-radius:50%; border: rgb(188, 233, 231) 2px solid; width: 37vh; height: 37vh; margin-left: 30vh;">
+            <img src="/images-planets/marte.jpg" onclick="marsweight()" style=" border-radius:50%; border: rgb(250, 161, 129) 2px solid; width: 27vh; height: 27vh; margin-left: 14vh;">
+            <img src="/images-planets/jupiter.jpg" onclick="jupiterweight()" style=" border-radius:50%; border: rgb(233, 215, 188) 2px solid; width: 65vh; height: 65vh; margin-left: 15vh;">            
+        </div>
+
+        <label style="color: aliceblue; margin-left: 19.5vw; font-size: 40px;">EARTH</label>
+        <label style="color: aliceblue; margin-left: 14.5vw; font-size: 40px;">MARS</label>
+        <label style="color: aliceblue; margin-left: 20vw; font-size: 40px;">JUPITER</label>
+
+        <script>
+            let g_earth = 9.8;
+            let g_mars = 3.7;
+            let g_jupiter = 24.8;
+            let weight = document.getElementById('weight');
+            const planet = document.getElementById('planet');
+            const resul = document.getElementById('resul');
+            let finalweight;
+
+            function earthweight() {
+                planet.textContent = `Your weight in Earth is: `;
+                resul.value = `${weight.value} kg` 
+            }
+
+            function marsweight() {
+                planet.textContent = `Your weight in Mars is: `;
+                finalweight = Math.round(weight.value * g_mars / g_earth);
+                resul.value = `${finalweight} kg`;
+            };
+
+            function jupiterweight() {
+                planet.textContent = `Your weight in Jupiter is: `;
+                finalweight = Math.round(weight.value * g_jupiter / g_earth);
+                resul.value = `${finalweight} kg`;
+            };
+
+            function reseat() {
+                planet.textContent = `Planet Weight`;
+                resul.value = '';
+                weight.value = '';
+            };
+
+        </script>
+    </body>
+</html>

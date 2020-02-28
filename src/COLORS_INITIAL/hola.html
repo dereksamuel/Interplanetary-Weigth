@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> THANOS </title>
+        <style>
+            body {
+                background-color: crimson;
+                color: turquoise;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+                font-size: 50px;
+            }
+
+            strong {
+                background-color: orangered;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="Getting">Hello dady ópinión, <strong>I´m learning</strong> js and html</p>
+        <p id="Other">This is other parragraph.</p>
+        <button onclick="lightcolor()">LIGHT</button>
+        <button  onclick="hightcolor()" id="Secret">SECRET</button>
+        <button onclick="resetear()">RESET</button>
+        <button onclick="borrarme()">BORRAR</button>
+
+        <script>
+            const parragraph = document.getElementById("Getting")
+            const other = document.getElementById("Other")
+            const secret = document.getElementById("Secret")
+            let x = document.textContent = 1;
+            let y = document.textContent = 2;
+            let z = x + y;
+
+            function hightcolor() {
+                parragraph.style = 'color: crimson;';
+            };
+
+            function lightcolor() {
+                other.style = 'color: rgb(255, 255, 255);';
+            };
+
+            function resetear() {
+                other.style = 'color: turquoise;';
+                parragraph.style = 'color: turquoise;';
+            };
+
+            function borrarme() {
+                document.write('Reseteaste mis datos, estoy lelo :(, tu resultado pepito es: ' + z);
+            };
+        </script>
+    </body>
+</html>
