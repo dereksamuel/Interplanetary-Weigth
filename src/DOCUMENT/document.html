@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>We play with WINDOW and DOCUMENT</h1>
+        <p>Pi is a number constant, with a value 3.1416</p>
+        <input type="number" id="input">
+        <button>TIMER</button>
+        <label id="label" style="background-color: rgb(171, 240, 177);">Aquí estará tu resultado</label>
+        <script>
+            const PI = 3.1416;
+            let url = window.location;
+            let label = document.getElementById('label');
+            let timer = document.querySelector('button');
+            let resul;
+
+            console.log(url);
+            console.log(window);
+            console.log(navigator);
+            console.log(console);
+
+            timer.onclick = function timers() {
+                resul = PI * parseInt(input.value);
+                navigator.cookieEnabled = false;
+                label.textContent = `PI timer is:${resul}`;
+            };
+
+            document.write('<br><br><strong>Estás en la siguiente dirección: </strong>' + url.port)
+
+        </script>
+    </body>
+</html>
